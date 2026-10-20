@@ -1,169 +1,145 @@
-# Awesome-Diagramming-Flowcharts
-
-## Top Diagramming & Flowcharts Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Code-to-Diagram Generation, Real-Time Collaboration & Local-First Editing*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Diagramming & Flowcharts**. These tools enable teams to map processes, design architectures, and sketch ideas visually—from code-first tools that render diagrams from plain text to canvas-based editors that work entirely offline.
-
-
-
-**Examples** include draw.io, Mermaid, Excalidraw, OpenFlowKit, LibreOffice Draw, Dia, yEd, Pencil Project, PlantUML, and Graphviz (the category leaders).
-
-
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, text-to-diagram generation, and open canvas infrastructure—ideal for developers, architects, and organizations seeking transparent, vendor-independent diagramming.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-| Product | Company Size (Valuation / Revenue) | Starting Paid Pricing | Free Tier / Trial Limits | Description & Best For |
-| :--- | :--- | :--- | :--- | :--- |
-| **Microsoft Visio** | ~$3.95 Trillion (Market Cap) | **$5.00 / user / month** (Visio Plan 1, billed annually) | **30-day free trial** (Plan 1/Plan 2; requires business login/card); lightweight web view/edit included with Microsoft 365 commercial plans | **Enterprise diagramming** integrated with Microsoft 365. Fully proprietary and cloud-hosted. No self-hosting. Deep integration with Excel data linking and SharePoint. **Best for**: organizations already committed to the Microsoft ecosystem. |
-| **Lucidchart** | ~$3.0 Billion - $4.5 Billion (Valuation) / ~$144M ARR | **$9.00 / month** (Individual plan, billed annually) | **Free forever plan**: Up to 3 active editable documents, max 60 shapes per document, and 100 basic templates | **The centralized standard for collaborative diagramming**. Fully proprietary and cloud-hosted. Free plan caps documents, shapes, and canvas space. No self-hosting, no offline mode. **Best for**: teams prioritizing polished real-time collaboration over data sovereignty. |
-| **Miro** | ~$1.79 Billion (Acquisition Valuation by Bending Spoons) / ~$600M ARR | **$8.00 / member / month** (Starter plan, billed annually, min 2 seats) or $10/mo monthly | **Free forever plan**: Up to 3 active editable boards, unlimited team members (all boards public to workspace), and 10 AI credits/mo | **Collaborative whiteboard platform** with diagramming templates. Fully proprietary and cloud-hosted. No self-hosting. **Best for**: teams wanting brainstorming and diagramming in one infinite canvas. |
-| **SmartDraw** | ~$7 Million - $10.3 Million (Estimated Annual Revenue) | **$9.95 / month** (Individual plan, billed annually at ~$119.40/yr) | **7-day free trial** with full feature access for internal evaluation; no permanent free tier | **Automated diagramming software** with built-in templates and data-linked visuals. Fully proprietary and cloud-hosted. No self-hosting. **Best for**: business users creating org charts and process diagrams. |
-| **Creately** | ~$5.1 Million (Estimated Annual Revenue) | **$5.00 / editor / month** (Starter plan, billed annually) or $8/mo monthly | **Free forever plan**: 3 workspaces, capped at 45 items per workspace, 1 folder, and basic export formats | **Diagramming and visual collaboration platform** with templates and real-time collaboration. Fully proprietary and cloud-hosted. No self-hosting. **Best for**: teams wanting a managed diagramming experience without technical setup. |
-
-## Open-Source GitHub Projects
-
-
-
-- **draw.io (diagrams.net)**
-
-  **Client-side JavaScript diagramming application** (Apache-2.0) — **the most widely adopted open-source diagramming tool** . **Fully offline-capable**—runs in browser or desktop, saves to local storage or integrated cloud drives (Google Drive, OneDrive, Dropbox) . **Rich shape libraries** covering UML, flowcharts, org charts, network diagrams, and more. **Zero cost, zero account required**. **Exports**: PNG, JPEG, SVG, PDF . **The trade-offs**: **lacks built-in team collaboration** (threaded comments, version control)—you collaborate by sharing files . **The reference implementation for general-purpose open-source diagramming**—**choose when you want a complete, free tool that works offline and integrates with your existing cloud storage**.
-
-
-
-- **Mermaid**
-
-  **JavaScript-based diagramming tool that generates diagrams from text** (MIT) — **the code-first standard** . **Write Markdown-like syntax and get rendered flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, ER diagrams, mind maps, and more** . **Native support across GitHub, GitLab, Notion, Obsidian, and VS Code**—diagrams embed directly in READMEs and wikis . **The speed advantage**: no dragging, no aligning, no context-switching—you type the logic and the tool handles layout . **The trade-offs**: **requires syntax knowledge** (steep learning curve initially) and **no pixel-perfect control**—if you need precise positioning, use a canvas tool . **The reference implementation for text-to-diagram**—**choose when you want diagrams that live in version control alongside code**.
-
-
-
-- **Excalidraw**
-
-  **Virtual whiteboard for sketching hand-drawn-like diagrams** (MIT) — **the hand-drawn choice** . **Infinite canvas-based whiteboard** with a distinctive sketch aesthetic. **End-to-end encryption** for real-time collaboration. **Local-first support** (autosaves to browser). **Export to PNG, SVG, and `.excalidraw` JSON**. **Shape libraries, dark mode, image support** . **Self-hostable via Docker** with a build that keeps **links, collaboration, and fonts on your own server**—the browser never contacts external services . **The trade-offs**: **not a design-system tool**—component management and structured diagrams are limited. **The reference implementation for whiteboarding and ideation**—**choose when you want a fast, collaborative canvas for sketches and early-stage wireframes**.
-
-
-
-- **OpenFlowKit**
-
-  **Free, open-source diagram canvas with code-to-diagram and AI integration** (MIT) — **the AI-native choice** . **Bidirectional text conversion**: paste **Mermaid, Structurizr DSL, or D2** onto the canvas and it converts; **Copy as Mermaid** exports flowcharts and sequence diagrams for READMEs . **AI assistant** via `⌘J`—pick Claude, OpenAI, Gemini, Groq, Mistral, Cerebras, NVIDIA, OpenRouter, Ollama, or any OpenAI-compatible endpoint; the key stays in your browser . **MCP server** lets Claude Code edit diagrams live . **CLI for CI**: `npx openflowkit render`, `validate`, `convert`, `discover` . **PR diagrams Action** comments on pull requests with diagram changes and drift detection . **Local-first, no account**. **The reference implementation for agent-native diagramming**—**choose when you want AI to draft and edit diagrams from natural language or code**.
-
-
-
-- **LibreOffice Draw**
-
-  **Open-source vector graphics editor** (MPL-2.0) — **the offline suite choice** . **Part of LibreOffice**—if you already use the suite, diagrams embed directly in Writer documents and Calc spreadsheets . **Node editing, Bézier curves, smart connectors, custom shapes**. **Exports**: ODG, SVG, PDF . **The trade-offs**: **not flowchart-optimized**—interface feels less polished than dedicated tools, and collaboration is weak . **The reference implementation for offline, integrated diagramming**—**choose when you're already in LibreOffice and want diagrams without installing another app**.
-
-
-
-- **Dia**
-
-  **Classic open-source diagram editor** (GPL-2.0) — **the lightweight legacy choice** . **Simple interface with basic shapes and connectors**. **Exports**: PNG, SVG, EPS. **Custom shape libraries via XML**. **Low resource footprint**—opens instantly on old hardware . **The trade-offs**: **dated UI and usability**—no real-time collaboration, no modern conveniences . **Best for**: simple flowcharts on constrained systems where a modern editor won't run.
-
-
-
-- **yEd Graph Editor**
-
-  **Powerful diagram editor with automatic layout algorithms** (yEd license) — **the auto-layout choice** . **Import external data and auto-arrange large graphs with one click**—manual diagramming is fast, but automatic layout is the differentiator . **Best for**: large graphs, network diagrams, and org charts where automatic arrangement saves hours.
-
-
-
-- **Pencil Project**
-
-  **Standalone diagramming and UI mockup tool** — **the lightweight prototyping choice** . **Built-in templates and interface components**. **Exports**: PNG, PDF, SVG. **Multi-page diagrams, object linking (hyperlinks for interactive prototypes)** . **The trade-offs**: **not suitable for large complex process modeling**, and **collaboration is limited** . **Best for**: quick UI flows and wireframe sketches without the overhead of a full design tool.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **PlantUML** — **Text-based UML diagram generator** (open-source) — **the UML specialist**. **Write plain text, get UML diagrams**—class, sequence, activity, use case, component, state, and deployment diagrams. **Integrates with IDEs and documentation tools**. **Best for**: software architects needing **standard UML diagrams from code**.
-
-- **Graphviz** — **Open-source graph visualization software** (EPL) — **the DOT language standard**. **Define graphs in DOT syntax, render with automatic layout engines** (dot, neato, fdp, circo, twopi). **PanGraphic** provides a real-time visual Graphviz editor with Monaco code view and multiple layout engines . **Interactive Graphviz** provides a private, client-side DOT viewer with live editing and WebAssembly rendering . **Best for**: **programmatic graph generation** and **network/flow diagrams from data**.
-
-- **Agentic Mermaid** — **Open-source Mermaid toolkit for AI agents** (open-source) — **the agent-native Mermaid renderer** . **SVG, PNG, ASCII, Unicode, JSON output** from one source. **Composable styles** (watercolor, blueprint, hand-drawn, publication-figure) and **custom palettes** . **CLI, MCP, and library interfaces** . **Best for**: teams wanting **AI-generated Mermaid diagrams with brand-consistent styling**.
-
-- **DocuShark** — **Page-based document editor with built-in diagramming and MCP server** (AGPL-3.0) — **the document-integrated choice** . **Prose and canvas in one document**—write text, drop in a flowchart, attach files. **Import from Mermaid, draw.io, and Excalidraw**. **Real-time collaboration via CRDT (Yjs)** with self-hostable relay. **MCP server** lets AI agents read and write documents . **Best for**: teams wanting **diagrams embedded in living documents** with AI agent access.
-
-- Community **n8n** workflows for diagram export automation and documentation pipeline integration.
-
-
-
-**Frameworks for building custom systems**: Combine **draw.io** for general-purpose offline diagramming with **Mermaid** for code-first diagrams in version control, **Excalidraw** for collaborative whiteboarding, **OpenFlowKit** for AI-assisted drafting, and **Graphviz** for programmatic graph generation—creating a comprehensive diagramming stack matched to each use case.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Diagramming tools handling proprietary architecture and process documentation must be evaluated for **self-hosting capability**, **file format portability** (open formats like SVG vs. proprietary JSON), and **collaboration features**.
-
-- **The "canvas vs. code" distinction drives workflow.** **Canvas tools** (draw.io, Excalidraw, OpenFlowKit) let you drag shapes and arrange visually—**fast for brainstorming, but the diagram lives in a binary or JSON file** that's hard to review in a pull request. **Code tools** (Mermaid, PlantUML, Graphviz) generate diagrams from text—**diagrams live in version control, diffs are readable, and layout is automatic** . **Choose based on whether you want to draw or describe.**
-
-- **draw.io is the complete free canvas, but collaboration is its gap.** **Rich shape libraries, offline mode, cloud drive integration**—it covers almost everything Lucidchart does without the subscription . **But threaded comments and version control are missing**—you collaborate by sharing files, not by editing together in real time . **For teams that need real-time multiplayer, Excalidraw or a SaaS tool fills that gap.**
-
-- **Mermaid's trade-off is control for speed.** **No pixel-perfect positioning**—if you need precise placement, use a canvas tool . **But for flowcharts, sequence diagrams, and Gantt charts that live in READMEs and wikis**, Mermaid's automatic layout and version-control-friendly text format are unmatched . **Native GitHub and GitLab support mean your diagrams render wherever your code lives.**
-
-- **AI-native diagramming is the emerging frontier.** **OpenFlowKit** converts Mermaid, D2, and Structurizr bidirectionally, lets AI models draft diagrams from natural language, and exposes an MCP server for Claude Code to edit live . **Agentic Mermaid** provides styled Mermaid output for agents . **DocuShark** embeds diagramming in documents with MCP access . **The diagram is becoming a tool that AI agents can create and modify, not just a file humans edit.**
-
-- **Self-hosted open-source solutions require proper backup strategies and version control.** **Diagrams are documentation**—if they only exist in a proprietary cloud, they're one subscription cancellation away from loss. **Open formats and local-first tools protect against that.**
-
-
+# 📊 Awesome-Diagramming-Flowcharts
+
+<p align="center">
+  <img src="./assets/banner.svg" alt="Awesome Diagramming & Flowcharts Banner" width="100%"/>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Diagramming-Flowcharts/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Diagramming-Flowcharts?style=social" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Diagramming-Flowcharts/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Diagramming-Flowcharts?style=social" alt="GitHub Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Diagramming-Flowcharts/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
+## 🌟 Top Diagramming, Flowcharts & Visual Collaboration Ecosystem
 
+> 🎯 **A comprehensive, SEO-optimized curated directory of SaaS platforms, diagrams-as-code engines, open-source canvas libraries, and visual collaboration tools.**  
+> *Focused on Code-to-Diagram Generation, Real-Time Multiplayer Collaboration, Architecture Prototyping & Local-First Canvas Editing.*  
+> **📅 Last updated: October 2026**
 
-**Made for developers, architects, and organizations building transparent diagramming solutions.**  
+This repository tracks top-tier **cloud SaaS platforms** and **open-source GitHub projects** across the **Diagramming & Flowcharts** ecosystem. Whether you are creating software architecture diagrams from Python/Mermaid/D2 scripts, sketching user flows on an infinite whiteboard, or modeling enterprise BPMN workflows, this list covers verified solutions with transparent pricing, exact free tier limits, and live GitHub stars.
 
-Let's make Diagramming & Flowcharts more open, data-driven, and code-first.
+---
+
+## 📑 Table of Contents
+
+- [📈 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ SaaS & Hosted Platforms](#️-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+- [🧩 Architecture & Framework Guidelines](#-architecture--framework-guidelines)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support](#-support)
+- [📈 Star History](#-star-history)
+- [⚖️ Disclaimer](#️-disclaimer)
+
+---
+
+## 📈 Sector Overview & Market Dynamics
+
+The global diagramming and visual collaboration software market is estimated at **$7.5B – $9.2B in 2026** (with standalone diagramming accounting for ~$1.3B–$3.8B and broader enterprise visual collaboration exceeding ~$8B), compounding at an annual growth rate (CAGR) of **11%–14%**. 
+
+Market concentration is **moderately fragmented**: while cloud giants and legacy leaders (Microsoft Visio, Lucidchart, Miro) maintain strong enterprise footprints, the sector is actively contested by high-velocity **code-to-diagram engines (Mermaid, D2, PlantUML)**, **local-first canvas toolkits (Excalidraw, tldraw, draw.io)**, and **AI-agent integrations**, preventing an absolute winner-take-all monopoly and driving innovation across developer-centric workflows.
+
+---
+
+## ☁️ SaaS & Hosted Platforms
+
+A breakdown of leading commercial diagramming and visual collaboration suites, sorted in descending order by **company size / valuation**:
+
+| 🏢 Product | 💰 Company Size (Valuation / Revenue) | 🏷️ Starting Paid Pricing | 🎁 Free Tier / Trial Limits | 📝 Description & Best For |
+| :--- | :--- | :--- | :--- | :--- |
+| **Microsoft Visio** | ~$3.95 Trillion (Market Cap) | **$5.00 / user / month** (Visio Plan 1, billed annually) | **30-day free trial** (Plan 1/Plan 2; requires business account & payment method); lightweight web viewing/editing included with Microsoft 365 commercial plans | **Enterprise diagramming standard** tightly integrated with Microsoft 365. Fully proprietary and cloud-hosted. Deep integration with Excel data linking, SharePoint, and Microsoft Teams. **Best for**: organizations already committed to the Microsoft enterprise ecosystem. |
+| **Lucidchart** | ~$3.0 Billion - $4.5 Billion (Valuation) / ~$144M ARR | **$9.00 / month** (Individual plan, billed annually) | **Free forever plan**: Up to 3 active editable documents, max 60 shapes per document, and 100 basic templates | **The centralized standard for collaborative diagramming**. Fully proprietary and cloud-hosted. Free plan caps documents and shapes. No self-hosting or offline desktop mode. **Best for**: teams prioritizing polished real-time multiplayer collaboration. |
+| **Miro** | ~$1.79 Billion (Acquisition Valuation by Bending Spoons) / ~$600M ARR | **$8.00 / member / month** (Starter plan, billed annually, min 2 seats) or $10/mo monthly | **Free forever plan**: Up to 3 active editable boards, unlimited team members (all boards public to workspace), and 10 AI credits/mo | **Collaborative visual whiteboard platform** with diagramming templates and infinite canvas. Fully proprietary and cloud-hosted. **Best for**: cross-functional teams wanting brainstorming, agile retrospectives, and diagramming in one infinite workspace. |
+| **SmartDraw** | ~$7 Million - $10.3 Million (Estimated Annual Revenue) | **$9.95 / month** (Individual plan, billed annually at ~$119.40/yr) | **7-day free trial** with full feature access for internal evaluation; no permanent free tier | **Automated diagramming and schematic software** with built-in templates and data-linked visuals. Fully proprietary and cloud-hosted. **Best for**: business and CAD/floor-plan users creating org charts, process diagrams, and schematics. |
+| **Creately** | ~$5.1 Million (Estimated Annual Revenue) | **$5.00 / editor / month** (Starter plan, billed annually) or $8/mo monthly | **Free forever plan**: 3 workspaces, capped at 45 items per workspace, 1 folder, and basic export formats | **Visual collaboration and diagramming platform** with specialized frameworks and real-time syncing. Fully proprietary and cloud-hosted. **Best for**: teams wanting a managed visual knowledge base without technical DevOps setup. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+Explore the most popular open-source repositories for diagrams-as-code, self-hosted whiteboards, and canvas modeling libraries. **Sorted by GitHub Stars (descending)**:
+
+| 📦 Project & Repo Link | ⭐ GitHub Stars | 📜 License | 🎯 Category / Core Strength | 📖 Overview |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Excalidraw](https://github.com/excalidraw/excalidraw)** | [![GitHub stars](https://img.shields.io/github/stars/excalidraw/excalidraw?style=social&color=white)](https://github.com/excalidraw/excalidraw/stargazers) | MIT | Virtual Hand-Drawn Whiteboard | **Infinite canvas-based virtual whiteboard** with a distinctive hand-drawn aesthetic. End-to-end encryption for real-time collaboration, local-first autosave to browser, and full Docker self-hosting support. |
+| **[Mermaid](https://github.com/mermaid-js/mermaid)** | [![GitHub stars](https://img.shields.io/github/stars/mermaid-js/mermaid?style=social&color=white)](https://github.com/mermaid-js/mermaid/stargazers) | MIT | Diagrams-as-Code Standard | **JavaScript-based text-to-diagram generation tool**. Define flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, ER diagrams, and mind maps in Markdown-like syntax. Natively supported across GitHub, GitLab, and Notion. |
+| **[draw.io (Desktop)](https://github.com/jgraph/drawio-desktop)** | [![GitHub stars](https://img.shields.io/github/stars/jgraph/drawio-desktop?style=social&color=white)](https://github.com/jgraph/drawio-desktop/stargazers) | Apache-2.0 | Offline Desktop Diagrammer | **The official desktop application for diagrams.net (draw.io)**. Runs completely offline on Windows, macOS, and Linux without any telemetry or cloud dependency. Full shape libraries for UML, AWS, GCP, network diagrams, and flowcharts. |
+| **[tldraw](https://github.com/tldraw/tldraw)** | [![GitHub stars](https://img.shields.io/github/stars/tldraw/tldraw?style=social&color=white)](https://github.com/tldraw/tldraw/stargazers) | Apache-2.0 / tldraw | Infinite Canvas SDK | **Extensible open-source whiteboard and infinite canvas React library**. Powers modern collaborative drawing experiences, custom shape engines, and real-time multiplayer sketching applications. |
+| **[Diagrams (Python)](https://github.com/mingrammer/diagrams)** | [![GitHub stars](https://img.shields.io/github/stars/mingrammer/diagrams?style=social&color=white)](https://github.com/mingrammer/diagrams/stargazers) | MIT | Diagram-as-Code (Cloud Architecture) | **Diagram as Code for cloud system architecture**. Draw cloud system architectures using pure Python code. Supports AWS, Azure, GCP, Kubernetes, Alibaba Cloud, and Oracle Cloud without manual drag-and-drop. |
+| **[D2](https://github.com/terrastruct/d2)** | [![GitHub stars](https://img.shields.io/github/stars/terrastruct/d2?style=social&color=white)](https://github.com/terrastruct/d2/stargazers) | MPL-2.0 | Modern Declarative Diagramming | **Modern declarative diagramming language** that turns text into diagrams. Features readable syntax, multiple layout engines (TALA, Dagre, ELK), SQL table modeling, auto-formatting, and animated sequence diagrams. |
+| **[PlantUML](https://github.com/plantuml/plantuml)** | [![GitHub stars](https://img.shields.io/github/stars/plantuml/plantuml?style=social&color=white)](https://github.com/plantuml/plantuml/stargazers) | GPL-3.0 | UML & Technical Diagrams | **The classic text-based UML diagramming tool**. Write plain text to render comprehensive UML class, sequence, activity, component, use-case, and deployment diagrams with deep IDE and CI/CD integration. |
+| **[Pencil Project](https://github.com/evolus/pencil)** | [![GitHub stars](https://img.shields.io/github/stars/evolus/pencil?style=social&color=white)](https://github.com/evolus/pencil/stargazers) | GPL-2.0 | GUI Prototyping & Wireframing | **Standalone diagramming and UI mockup tool**. Features built-in shape collections for desktop and mobile wireframing, multi-page document export, and clickable hyperlink prototyping. |
+| **[bpmn-js](https://github.com/bpmn-io/bpmn-js)** | [![GitHub stars](https://img.shields.io/github/stars/bpmn-io/bpmn-js?style=social&color=white)](https://github.com/bpmn-io/bpmn-js/stargazers) | Camunda License / Open Source | BPMN 2.0 Process Modeling | **BPMN 2.0 diagramming and web modeling toolkit**. Embeds directly in web applications to view, design, and edit standardized business process diagrams and workflows in pure JavaScript. |
+| **[draw.io (Web)](https://github.com/jgraph/drawio)** | [![GitHub stars](https://img.shields.io/github/stars/jgraph/drawio?style=social&color=white)](https://github.com/jgraph/drawio/stargazers) | Apache-2.0 | Web Diagramming Platform | **Source repository for the diagrams.net (draw.io) web client**. Connects directly with Google Drive, OneDrive, Dropbox, and GitHub for completely free, account-less diagram storage. |
+| **[OpenFlowKit](https://github.com/openflowkit/openflowkit)** | [![GitHub stars](https://img.shields.io/github/stars/openflowkit/openflowkit?style=social&color=white)](https://github.com/openflowkit/openflowkit/stargazers) | MIT | AI-Native Canvas & MCP Diagrammer | **Free open-source diagram canvas with bidirectional text conversion** (Mermaid, D2, Structurizr), local AI assistant integration (Claude, OpenAI, Ollama), CLI for CI/CD drift detection, and live MCP server support. |
+
+---
+
+### 🛠️ Additional Notable Open-Source Diagramming Tools
+
+- **[Graphviz](https://graphviz.org/)** — **The DOT language standard** (EPL): Define graphs and networks programmatically in DOT syntax and render using automatic graph layout engines (`dot`, `neato`, `circo`, `twopi`).
+- **[LibreOffice Draw](https://www.libreoffice.org/discover/draw/)** — **Offline office vector diagrammer** (MPL-2.0): Full-featured vector graphics and flowchart tool integrated into the LibreOffice suite.
+- **[Dia](http://dia-installer.de/)** — **Lightweight legacy diagram editor** (GPL-2.0): Classic modular flowcharting program with XML-based custom shape support for low-spec workstations.
+- **DocuShark** — **Document editor with built-in canvas and MCP server** (AGPL-3.0): Blends Markdown prose with real-time CRDT diagramming and AI agent reading/writing access.
+- **Agentic Mermaid** — **Mermaid rendering engine for autonomous AI agents**: Generates styled SVGs, PNGs, ASCII, and Unicode art with custom themes for automated documentation pipelines.
+
+---
+
+## 🧩 Architecture & Framework Guidelines
+
+When designing and documenting systems, consider the fundamental trade-offs between **canvas-based** and **code-based** diagramming:
+
+1. **Canvas Tools (draw.io, Excalidraw, tldraw)**:
+   - *Best for*: Brainstorming, user journeys, initial wireframes, and design sprints.
+   - *Trade-off*: Diagrams are stored as JSON/XML binaries that are harder to review in Git pull request diffs.
+2. **Diagrams-as-Code (Mermaid, D2, PlantUML, Diagrams Python)**:
+   - *Best for*: Living system architectures, CI/CD pipeline automation, and developer READMEs.
+   - *Trade-off*: Automatic layouts lack pixel-perfect manual positioning, but diffs are instantly readable in version control.
+3. **Local-First & Data Sovereignty**:
+   - For sensitive enterprise architectures, tools supporting 100% offline usage (draw.io Desktop, Excalidraw Docker, PlantUML CLI) ensure sensitive topology never leaves your boundary.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are warmly welcomed! Help make this ecosystem guide the definitive resource for developers:
+
+1. 🍴 **Fork the repo** to your GitHub account.
+2. 🌿 **Create a descriptive branch** (`git checkout -b feature/add-new-diagram-tool`).
+3. ✏️ **Add/edit entries in `README.md`** following the established table structure with links, license, and star badges.
+4. 🚀 **Submit a Pull Request** with a concise explanation of why the tool should be listed.
+
+---
+
+## 💖 Support
+
+If you find this curated diagramming & flowchart repository helpful:
+- ⭐ **Star this repository** to show your support and help others discover it!
+- 🍴 **Fork & Share** it with your fellow developers, system architects, and tech communities.
+- ☕ **Buy me a coffee / Sponsor**: Support ongoing maintenance and curation via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Diagramming-Flowcharts&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Diagramming-Flowcharts&type=date&legend=top-left)
+
+---
+
+## ⚖️ Disclaimer
+
+- This list is a community-curated resource for informational purposes only and does not constitute an official endorsement.
+- All product names, logos, trademarks, and registered trademarks belong to their respective owners.
+- SaaS pricing, terms, and feature sets change periodically; verify active pricing on the respective vendors' websites before purchase.
+
+---
+
+<p align="center">
+  <b>Built with ❤️ for developers, software architects, and open-source creators worldwide.</b><br/>
+  <i>Let's keep diagramming open, code-first, and beautifully visualized.</i>
+</p>
