@@ -42,37 +42,13 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## SaaS/Hosted Platforms
 
-
-
-- **Lucidchart**
-
-  **The centralized standard for collaborative diagramming**. Fully proprietary and cloud-hosted. **Free plan caps documents, shapes, and canvas space**—users routinely hit limits and migrate to draw.io . **No self-hosting, no offline mode**. **Best for**: teams prioritizing polished real-time collaboration over data sovereignty.
-
-
-
-- **Microsoft Visio**
-
-  **Enterprise diagramming** integrated with Microsoft 365. Fully proprietary and cloud-hosted. **No self-hosting**. Deep integration with Excel data linking and SharePoint. **Best for**: organizations already committed to the Microsoft ecosystem.
-
-
-
-- **Miro**
-
-  **Collaborative whiteboard platform** with diagramming templates. Fully proprietary and cloud-hosted. **No self-hosting**. **Best for**: teams wanting brainstorming and diagramming in one infinite canvas.
-
-
-
-- **Creately**
-
-  **Diagramming and visual collaboration platform** with templates and real-time collaboration. Fully proprietary and cloud-hosted. **No self-hosting**. **Best for**: teams wanting a managed diagramming experience without technical setup.
-
-
-
-- **SmartDraw**
-
-  **Automated diagramming software** with built-in templates and data-linked visuals. Fully proprietary and cloud-hosted. **No self-hosting**. **Best for**: business users creating org charts and process diagrams.
-
-
+| Product | Company Size (Valuation / Revenue) | Starting Paid Pricing | Free Tier / Trial Limits | Description & Best For |
+| :--- | :--- | :--- | :--- | :--- |
+| **Microsoft Visio** | ~$3.95 Trillion (Market Cap) | **$5.00 / user / month** (Visio Plan 1, billed annually) | **30-day free trial** (Plan 1/Plan 2; requires business login/card); lightweight web view/edit included with Microsoft 365 commercial plans | **Enterprise diagramming** integrated with Microsoft 365. Fully proprietary and cloud-hosted. No self-hosting. Deep integration with Excel data linking and SharePoint. **Best for**: organizations already committed to the Microsoft ecosystem. |
+| **Lucidchart** | ~$3.0 Billion - $4.5 Billion (Valuation) / ~$144M ARR | **$9.00 / month** (Individual plan, billed annually) | **Free forever plan**: Up to 3 active editable documents, max 60 shapes per document, and 100 basic templates | **The centralized standard for collaborative diagramming**. Fully proprietary and cloud-hosted. Free plan caps documents, shapes, and canvas space. No self-hosting, no offline mode. **Best for**: teams prioritizing polished real-time collaboration over data sovereignty. |
+| **Miro** | ~$1.79 Billion (Acquisition Valuation by Bending Spoons) / ~$600M ARR | **$8.00 / member / month** (Starter plan, billed annually, min 2 seats) or $10/mo monthly | **Free forever plan**: Up to 3 active editable boards, unlimited team members (all boards public to workspace), and 10 AI credits/mo | **Collaborative whiteboard platform** with diagramming templates. Fully proprietary and cloud-hosted. No self-hosting. **Best for**: teams wanting brainstorming and diagramming in one infinite canvas. |
+| **SmartDraw** | ~$7 Million - $10.3 Million (Estimated Annual Revenue) | **$9.95 / month** (Individual plan, billed annually at ~$119.40/yr) | **7-day free trial** with full feature access for internal evaluation; no permanent free tier | **Automated diagramming software** with built-in templates and data-linked visuals. Fully proprietary and cloud-hosted. No self-hosting. **Best for**: business users creating org charts and process diagrams. |
+| **Creately** | ~$5.1 Million (Estimated Annual Revenue) | **$5.00 / editor / month** (Starter plan, billed annually) or $8/mo monthly | **Free forever plan**: 3 workspaces, capped at 45 items per workspace, 1 folder, and basic export formats | **Diagramming and visual collaboration platform** with templates and real-time collaboration. Fully proprietary and cloud-hosted. No self-hosting. **Best for**: teams wanting a managed diagramming experience without technical setup. |
 
 ## Open-Source GitHub Projects
 
