@@ -1,154 +1,152 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
   <defs>
-    <!-- Gradients -->
+    <!-- Background Gradients -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f19" />
-      <stop offset="50%" stop-color="#111827" />
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0f172a" />
       <stop offset="100%" stop-color="#030712" />
     </linearGradient>
 
-    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Gradient Accents -->
+    <linearGradient id="title-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#818cf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
     </linearGradient>
 
-    <linearGradient id="flow-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="line-flow-1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2" />
       <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8" />
       <stop offset="100%" stop-color="#c084fc" stop-opacity="0.2" />
     </linearGradient>
 
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    <radialGradient id="glow-ambient-left" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Filters -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
+    <radialGradient id="glow-ambient-right" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </radialGradient>
 
-    <!-- Flowchart Node Grid Background Pattern -->
+    <!-- Technical Flowchart Grid Pattern -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1f2937" stroke-width="0.7" stroke-opacity="0.6"/>
-      <circle cx="40" cy="40" r="1.5" fill="#374151" fill-opacity="0.6" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.6"/>
+      <circle cx="40" cy="40" r="1.5" fill="#334155" fill-opacity="0.5" />
     </pattern>
   </defs>
 
-  <style>
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.65; transform: scale(1.08); }
-    }
-    @keyframes dashMove {
-      to { stroke-dashoffset: -120; }
-    }
-    @keyframes floatNode1 {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes floatNode2 {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(8px); }
-    }
-    @keyframes pulseDot {
-      0%, 100% { r: 4; fill-opacity: 0.6; }
-      50% { r: 7; fill-opacity: 1; }
-    }
-    .flow-dash {
-      stroke-dasharray: 8, 8;
-      animation: dashMove 6s linear infinite;
-    }
-    .floating-1 {
-      animation: floatNode1 5s ease-in-out infinite;
-    }
-    .floating-2 {
-      animation: floatNode2 6s ease-in-out infinite;
-    }
-    .glow-sphere {
-      transform-origin: center;
-      animation: pulseGlow 7s ease-in-out infinite;
-    }
-    .pulse-dot {
-      animation: pulseDot 3s ease-in-out infinite;
-    }
-  </style>
-
-  <!-- Background Base -->
+  <!-- 1. Background Layers -->
   <rect width="1200" height="360" fill="url(#bg-grad)" />
   <rect width="1200" height="360" fill="url(#grid)" />
 
-  <!-- Ambient Glowing Spheres (Background) -->
-  <circle cx="200" cy="180" r="180" fill="url(#glow)" class="glow-sphere" />
-  <circle cx="1000" cy="180" r="220" fill="url(#glow)" class="glow-sphere" />
+  <!-- 2. Ambient Pulsing Glow Orbs (SMIL Animation) -->
+  <circle cx="180" cy="180" r="160" fill="url(#glow-ambient-left)">
+    <animate attributeName="r" values="140;180;140" dur="8s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="8s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- Dynamic Diagram Flow Lines (Behind text layer) -->
-  <g opacity="0.65">
-    <path d="M 80 80 C 260 40, 320 130, 480 90 S 760 30, 940 90 S 1120 70, 1140 100" fill="none" stroke="url(#flow-line-grad)" stroke-width="2.5" class="flow-dash" />
-    <path d="M 60 280 C 240 320, 360 240, 520 270 S 820 330, 980 270 S 1100 290, 1140 260" fill="none" stroke="url(#flow-line-grad)" stroke-width="2" class="flow-dash" style="animation-duration: 9s;" />
+  <circle cx="1020" cy="180" r="180" fill="url(#glow-ambient-right)">
+    <animate attributeName="r" values="160;210;160" dur="10s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="10s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 3. Dynamic Animated Flowchart Connectors (SMIL Animation) -->
+  <g opacity="0.75">
+    <!-- Top Flow Wave -->
+    <path d="M 60 70 C 240 30, 340 120, 500 80 S 780 20, 960 80 S 1120 50, 1150 80"
+          fill="none" stroke="url(#line-flow-1)" stroke-width="2.5" stroke-dasharray="10, 10">
+      <animate attributeName="stroke-dashoffset" from="0" to="-120" dur="8s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Bottom Flow Wave -->
+    <path d="M 50 290 C 230 330, 350 250, 520 280 S 830 340, 990 280 S 1100 300, 1150 270"
+          fill="none" stroke="url(#line-flow-1)" stroke-width="2" stroke-dasharray="8, 8">
+      <animate attributeName="stroke-dashoffset" from="0" to="-96" dur="10s" repeatCount="indefinite" />
+    </path>
   </g>
 
-  <!-- Decorative Flowchart Floating Nodes (Far Left & Far Right) -->
-  <!-- Left Side Nodes -->
-  <g class="floating-1" opacity="0.75">
-    <rect x="40" y="140" width="100" height="42" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
-    <text x="90" y="166" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle" font-weight="600">INPUT CODE</text>
-    <circle cx="140" cy="161" r="4" fill="#38bdf8" class="pulse-dot" />
+  <!-- 4. Floating Flowchart Nodes with SMIL motion (Left Side) -->
+  <g>
+    <!-- Floating Node: INPUT CODE -->
+    <g transform="translate(45, 135)">
+      <animateTransform attributeName="transform" type="translate" values="45,135; 45,127; 45,135" dur="5s" repeatCount="indefinite" />
+      <rect width="115" height="42" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="57" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" text-anchor="middle" font-weight="700">INPUT CODE</text>
+      <!-- Pulsing Indicator Dot -->
+      <circle cx="115" cy="21" r="4.5" fill="#38bdf8">
+        <animate attributeName="r" values="3.5;6.5;3.5" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Floating Node: DECISION DIAMOND -->
+    <g transform="translate(60, 45)">
+      <animateTransform attributeName="transform" type="translate" values="60,45; 60,53; 60,45" dur="6s" repeatCount="indefinite" />
+      <polygon points="45,0 90,24 45,48 0,24" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" />
+      <text x="45" y="28" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="middle" font-weight="700">PARSE</text>
+    </g>
   </g>
 
-  <g class="floating-2" opacity="0.65">
-    <polygon points="90,45 135,70 90,95 45,70" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" />
-    <text x="90" y="74" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" text-anchor="middle" font-weight="600">DECISION</text>
+  <!-- 5. Floating Flowchart Nodes with SMIL motion (Right Side) -->
+  <g>
+    <!-- Floating Node: SVG / CANVAS -->
+    <g transform="translate(1040, 135)">
+      <animateTransform attributeName="transform" type="translate" values="1040,135; 1040,143; 1040,135" dur="5.5s" repeatCount="indefinite" />
+      <rect width="120" height="42" rx="8" fill="#1e293b" stroke="#c084fc" stroke-width="1.5" />
+      <text x="60" y="26" fill="#e9d5ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" text-anchor="middle" font-weight="700">SVG / CANVAS</text>
+      <circle cx="0" cy="21" r="4.5" fill="#c084fc">
+        <animate attributeName="r" values="3.5;6.5;3.5" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Floating Node: MULTIPLAYER SYNC -->
+    <g transform="translate(1025, 235)">
+      <animateTransform attributeName="transform" type="translate" values="1025,235; 1025,227; 1025,235" dur="6.5s" repeatCount="indefinite" />
+      <rect width="135" height="38" rx="19" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="67" y="24" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle" font-weight="700">MULTIPLAYER</text>
+    </g>
   </g>
 
-  <!-- Right Side Nodes -->
-  <g class="floating-2" opacity="0.75">
-    <rect x="1050" y="140" width="110" height="42" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5" />
-    <text x="1105" y="166" fill="#e9d5ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle" font-weight="600">SVG / CANVAS</text>
-    <circle cx="1050" cy="161" r="4" fill="#c084fc" class="pulse-dot" />
-  </g>
-
-  <g class="floating-1" opacity="0.65">
-    <rect x="1030" y="240" width="130" height="38" rx="19" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
-    <text x="1095" y="264" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle" font-weight="600">REAL-TIME SYNC</text>
-  </g>
-
-  <!-- Foreground Title and Core Content (High Contrast, Centered, Never Obscured) -->
+  <!-- 6. Foreground Title, Subtitle, & Content (Always on top, High Contrast, Centered) -->
   <g id="foreground-content">
-    <!-- Top Pill / Badge -->
-    <rect x="475" y="52" width="250" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
-    <circle cx="493" cy="67" r="5" fill="#10b981" />
-    <text x="605" y="72" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1.2" text-anchor="middle">CURATED AWESOME ECOSYSTEM</text>
+    <!-- Top Category Pill / Badge -->
+    <rect x="470" y="48" width="260" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+    <circle cx="490" cy="64" r="5" fill="#10b981">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="608" y="69" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" text-anchor="middle">CURATED AWESOME ECOSYSTEM</text>
 
     <!-- Main Title -->
-    <text x="600" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+    <text x="600" y="142" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
       Awesome Diagramming &amp; Flowcharts
     </text>
 
     <!-- Subtitle (Gradient Accent) -->
-    <text x="600" y="195" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="url(#accent-cyan)" letter-spacing="0.2">
-      Diagrams-as-Code &bull; Visual Collaboration &bull; Local-First Canvases &bull; Whiteboards
+    <text x="600" y="192" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="url(#title-cyan)" letter-spacing="0.2">
+      Diagrams-as-Code &#x2022; Visual Collaboration &#x2022; Local-First Canvases &#x2022; Whiteboards
     </text>
 
     <!-- Sub-description -->
-    <text x="600" y="235" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" fill="#94a3b8" font-weight="400">
-      Comprehensive curated collection of SaaS platforms and open-source tools with pricing, live star counts, and architectures
+    <text x="600" y="232" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" fill="#94a3b8" font-weight="400">
+      Curated directory of SaaS platforms and open-source tools with pricing, live star counts, and architectures
     </text>
 
-    <!-- Bottom Feature Tags -->
-    <g transform="translate(340, 275)">
+    <!-- Bottom Feature Tags (Pills) -->
+    <g transform="translate(330, 272)">
       <!-- Tag 1 -->
-      <rect x="0" y="0" width="150" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
-      <text x="75" y="18" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" text-anchor="middle" font-weight="600">⚡ Code-to-Diagram</text>
+      <rect x="0" y="0" width="165" height="30" rx="15" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+      <text x="82" y="19" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle" font-weight="600">⚡ Code-to-Diagram</text>
 
       <!-- Tag 2 -->
-      <rect x="165" y="0" width="170" height="28" rx="14" fill="#0c4a6e" stroke="#0284c7" stroke-width="1" />
-      <text x="250" y="18" fill="#bae6fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" text-anchor="middle" font-weight="600">👥 Visual Collaboration</text>
+      <rect x="180" y="0" width="180" height="30" rx="15" fill="#0c4a6e" stroke="#0284c7" stroke-width="1" />
+      <text x="270" y="19" fill="#bae6fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle" font-weight="600">👥 Visual Collaboration</text>
 
       <!-- Tag 3 -->
-      <rect x="350" y="0" width="160" height="28" rx="14" fill="#064e3b" stroke="#059669" stroke-width="1" />
-      <text x="430" y="18" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" text-anchor="middle" font-weight="600">🔒 Local-First &amp; Free</text>
+      <rect x="375" y="0" width="165" height="30" rx="15" fill="#064e3b" stroke="#059669" stroke-width="1" />
+      <text x="457" y="19" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle" font-weight="600">🔒 Local-First &amp; Free</text>
     </g>
   </g>
 </svg>
