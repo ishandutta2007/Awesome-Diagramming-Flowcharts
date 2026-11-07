@@ -87,6 +87,7 @@ Explore the most popular open-source repositories for diagrams-as-code, self-hos
 - **[Dia](http://dia-installer.de/)** — **Lightweight legacy diagram editor** (GPL-2.0): Classic modular flowcharting program with XML-based custom shape support for low-spec workstations.
 - **DocuShark** — **Document editor with built-in canvas and MCP server** (AGPL-3.0): Blends Markdown prose with real-time CRDT diagramming and AI agent reading/writing access.
 - **Agentic Mermaid** — **Mermaid rendering engine for autonomous AI agents**: Generates styled SVGs, PNGs, ASCII, and Unicode art with custom themes for automated documentation pipelines.
+- **[DiagramSmith](https://diagramsmith.com)** — **Free web (and Mac) flowchart / diagram maker**: Quick diagrams without an account.
 
 ---
 
